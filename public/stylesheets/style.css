@@ -1,8 +1,30 @@
+html, body, #main {
+  height: 100%;
+}
+
 body {
-  padding: 50px;
+  margin:0;
+  padding:0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#main {
+  width: 99%;
+  margin: 0 auto;
+}
+
+.tile {
+  height: 131px;
+  width:  101px;
+  position: absolute;
+}
+.stone {
+  background: url('/images/Stone Block.png') bottom left;
+}
+.grass {
+  background: url('/images/Grass Block.png') bottom left;
 }
