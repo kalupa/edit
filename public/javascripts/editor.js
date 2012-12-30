@@ -16,7 +16,6 @@ define(['zepto', 'underscore'], function ($, _) {
   ];
 
   var loadBase = function() {
-
     _(64).times(function(row){
       _(64).times(function(col){
         var ypos = WIDTH * col;
@@ -37,8 +36,7 @@ define(['zepto', 'underscore'], function ($, _) {
   var placeTile = function(tileName, rowIndex, colIndex) {
     var ypos = WIDTH  * colIndex;
     var xpos = HEIGHT * rowIndex;
-    //tileMap[rowIndex][colIndex] = tileName;
-    place('mask',             xpos + TOP_OFFSET + 1, ypos, rowIndex, colIndex );
+    place('mask', xpos + TOP_OFFSET + 1, ypos, rowIndex, colIndex );
     return place('tile ' + tileName, xpos, ypos, rowIndex, colIndex );
   };
 

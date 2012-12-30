@@ -26,7 +26,7 @@ a {
 }
 .mask {
   height: 120px;
-  background: white;
+  background-color: white;
   border-radius: 5px;
 }
 .placeholder {
@@ -41,12 +41,26 @@ a {
 }
 .blink {
   -webkit-animation: blinky 0.25s ease-in-out infinite alternate;
-  /*-webkit-animation-duration: 0.2s;*/
-  /*-webkit-animation-name: blinky;*/
-  /*-webkit-animation-iteration-count: infinite;*/
-  /*-webkit-animation-direction: alternate;*/
+  -moz-animation: blinky 0.25s ease-in-out infinite alternate;
+  animation: blinky 0.25s ease-in-out infinite alternate;
 }
 @-webkit-keyframes blinky {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+@-moz-keyframes blinky {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes blinky {
   from {
     opacity: 1;
   }
