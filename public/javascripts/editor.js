@@ -6,8 +6,11 @@ var HEIGHT = 81;
 define(['zepto', 'underscore'], function ($, _) {
 
   var tileMap = [
-    ['grass', 'stone', 'grass'],
-    ['stone', 'stone', 'stone']
+    ['grass', 'dirty', 'dirty', 'dirty', 'dirty', 'dirty', 'grass'],
+    ['grass', 'dirty', 'grass', 'stone', 'grass', 'dirty', 'grass'],
+    ['grass', 'dirty', 'stone', 'stone', 'stone', 'dirty', 'grass'],
+    ['grass', 'dirty', 'dirty', 'dirty', 'dirty', 'dirty', 'grass'],
+    ['grass', 'grass', 'grass', 'grass', 'grass', 'grass', 'grass']
   ];
 
   var loadTiles = function() {

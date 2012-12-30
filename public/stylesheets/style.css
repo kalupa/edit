@@ -13,7 +13,7 @@ a {
 }
 
 #main {
-  width: 99%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -21,10 +21,14 @@ a {
   height: 131px;
   width:  101px;
   position: absolute;
+  background-position: bottom left;
 }
 .stone {
-  background: url('/images/Stone Block.png') bottom left;
+  background-image: url('/images/Stone Block.png');
 }
 .grass {
-  background: url('/images/Grass Block.png') bottom left;
+  background-image: url('/images/Grass Block.png');
+}
+.dirty {
+  background-image: url('/images/Dirt Block.png');
 }
