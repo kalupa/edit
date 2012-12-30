@@ -17,12 +17,38 @@ a {
   margin: 0 auto;
 }
 
-.tile {
+.mask, .tile {
   height: 131px;
   width:  101px;
   position: absolute;
   background-position: bottom left;
 }
+.mask {
+  background: white;
+  border-radius: 5px;
+}
+.hoverBlock {
+  width: 99px;
+  height: 77px;
+  border: 2px solid red;
+  position: absolute;
+}
+.blink {
+  -webkit-animation: blinky 0.25s ease-in-out infinite alternate;
+  /*-webkit-animation-duration: 0.2s;*/
+  /*-webkit-animation-name: blinky;*/
+  /*-webkit-animation-iteration-count: infinite;*/
+  /*-webkit-animation-direction: alternate;*/
+}
+@-webkit-keyframes blinky {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
 .stone {
   background-image: url('/images/Stone Block.png');
 }
@@ -31,4 +57,7 @@ a {
 }
 .dirty {
   background-image: url('/images/Dirt Block.png');
+}
+.water {
+  background-image: url('/images/Water Block.png');
 }
