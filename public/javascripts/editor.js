@@ -15,38 +15,68 @@ define(['zepto', 'underscore'], function ($, _) {
     ['grass', 'grass', 'grass', 'grass', 'grass', 'dirty', 'water', 'water', 'grass']
   ];
 
+  var loadBase = function() {
+
+    _(64).times(function(row){
+      _(64).times(function(col){
+        var ypos = WIDTH * col;
+        var xpos = HEIGHT * row;
+        var block = place('placeholder', xpos, ypos, row, col );
+      });
+    });
+  };
+
   var loadTiles = function() {
       _.each(tileMap, function(row, rowIndex) {
         _.each(row, function(tileName, blockIndex){
-          placeMask(rowIndex, blockIndex);
-          placeBlock(tileName, rowIndex, blockIndex);
+          placeTile(tileName, rowIndex, blockIndex);
         });
       });
   };
-  var placeMask = function (rowIndex, blockIndex) {
-    $("<div class='mask'></div>").
-      appendTo('#main').
-      css({ top: ( HEIGHT * rowIndex ) + TOP_OFFSET +1, left: WIDTH * blockIndex });
+
+  var placeTile = function(tileName, rowIndex, colIndex) {
+    var ypos = WIDTH  * colIndex;
+    var xpos = HEIGHT * rowIndex;
+    //tileMap[rowIndex][colIndex] = tileName;
+    place('mask',             xpos + TOP_OFFSET + 1, ypos, rowIndex, colIndex );
+    return place('tile ' + tileName, xpos, ypos, rowIndex, colIndex );
   };
 
-  var placeBlock = function(tileName, rowIndex, blockIndex) {
-    $("<div class='tile " + tileName + "'></div>").
+  var place = function(className, xpos, ypos, row, col) {
+    return $("<div class='"+className+"' data-row='"+row+"' data-col='"+col+"'></div>").
       appendTo('#main').
-      css({ top: HEIGHT * rowIndex, left: WIDTH * blockIndex });
+      css({ top: xpos, left: ypos, zIndex: row });
   };
 
   var setupSelections = function() {
-    var tiles = $('.tile');
-    tiles.on('mouseover',function(e){
-      tiles.removeClass('blink');
+    $('.tile').on(tileHover);
+  };
+  var tileHover = {
+    'mouseover': function() {
       $(this).addClass('blink');
+      //hoverBlock.hide();
+    },
+    'mouseout': function() {
+      $(this).removeClass('blink');
+    }
+  };
+
+  var setupClick = function() {
+    $('.placeholder').on('click', function(e) {
+      var current = $(this);
+      var row     = current.data('row');
+      var col     = current.data('col');
+      var tile    = placeTile('stone', row, col);
+      tile.on(tileHover);
     });
   };
 
   var exports = {
     run: function() {
+      loadBase();
       loadTiles();
       setupSelections();
+      setupClick();
     }
   };
   return exports;

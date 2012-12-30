@@ -6,6 +6,7 @@ body {
   margin:0;
   padding:0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: gray;
 }
 
 a {
@@ -17,21 +18,26 @@ a {
   margin: 0 auto;
 }
 
-.mask, .tile {
+.placeholder, .mask, .tile {
   height: 131px;
   width:  101px;
   position: absolute;
   background-position: bottom left;
 }
 .mask {
+  height: 120px;
   background: white;
   border-radius: 5px;
+}
+.placeholder {
+  height: 120px;
 }
 .hoverBlock {
   width: 99px;
   height: 77px;
   border: 2px solid red;
   position: absolute;
+  z-index: 20;
 }
 .blink {
   -webkit-animation: blinky 0.25s ease-in-out infinite alternate;
