@@ -1,8 +1,83 @@
+html, body, #main {
+  height: 100%;
+}
+
 body {
-  padding: 50px;
+  margin:0;
+  padding:0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: gray;
 }
 
 a {
   color: #00B7FF;
+}
+
+#main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.placeholder, .mask, .tile {
+  height: 131px;
+  width:  101px;
+  position: absolute;
+  background-position: bottom left;
+}
+.mask {
+  height: 120px;
+  background-color: white;
+  border-radius: 5px;
+}
+.placeholder {
+  height: 120px;
+}
+.hoverBlock {
+  width: 99px;
+  height: 77px;
+  border: 2px solid red;
+  position: absolute;
+  z-index: 20;
+}
+.blink {
+  -webkit-animation: blinky 0.25s ease-in-out infinite alternate;
+  -moz-animation: blinky 0.25s ease-in-out infinite alternate;
+  animation: blinky 0.25s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blinky {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+@-moz-keyframes blinky {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes blinky {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+.stone {
+  background-image: url('/images/Stone Block.png');
+}
+.grass {
+  background-image: url('/images/Grass Block.png');
+}
+.dirty {
+  background-image: url('/images/Dirt Block.png');
+}
+.water {
+  background-image: url('/images/Water Block.png');
 }
