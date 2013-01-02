@@ -59,22 +59,47 @@ define(['zepto', 'underscore'], function ($, _) {
     }
   };
 
-  var setupClick = function() {
-    $('.placeholder').on('click', function(e) {
+  var tileSwap = {
+    'click': function(e) {
       var current = $(this);
       var row     = current.data('row');
       var col     = current.data('col');
-      var tile    = placeTile('stone', row, col);
-      tile.on(tileHover);
+
+      if (current.hasClass('tile')) {
+        current.removeClass().addClass(currentTile + ' tile blink');
+      } else {
+        var tile = placeTile(currentTile, row, col);
+        tile.addClass('blink');
+        tile.on(tileHover);
+        tile.on(tileSwap);
+        current.remove();
+      }
+    }
+  };
+
+
+  var currentTile = 'stone';
+  var setupClick = function() {
+    $('.placeholder, .tile').on(tileSwap);
+  };
+
+  $('a.stone').addClass('selected');
+  var setupPalette = function() {
+    var items = $('#palette a');
+    items.on('click', function(e) {
+      items.removeClass('selected');
+      currentTile = $(this).attr('class');
+      $(this).addClass('selected');
     });
   };
 
   var exports = {
-    run: function() {
+    load: function() {
       loadBase();
       loadTiles();
       setupSelections();
       setupClick();
+      setupPalette();
     }
   };
   return exports;
