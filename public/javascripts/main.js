@@ -16,6 +16,6 @@ require.config({
 
 require(['zepto','editor'], function ($,editor) {
 
-  editor.run();
+  editor.load();
 
 });

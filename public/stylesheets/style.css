@@ -18,6 +18,33 @@ a {
   margin: 0 auto;
 }
 
+#palette {
+  position: fixed;
+  z-index: 200;
+  top: 20px;
+  right: 20px;
+  width: 82px;
+  height: 300px;
+  border: 1px solid #666;
+  background-color: #999;
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+}
+#palette a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  background-position: -4px 80px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.6);
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+#palette a.selected {
+  border: 1px solid red;
+}
+
 .placeholder, .mask, .tile {
   height: 131px;
   width:  101px;
