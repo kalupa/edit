@@ -8,11 +8,11 @@ var LEFT_OFFSET = -1;
 define(['zepto', 'underscore'], function ($, _) {
 
   var tileMap = [
-    ['grass', 'dirty', 'dirty', 'dirty', 'dirty', 'dirty', 'water', 'water', 'grass'],
-    ['grass', 'dirty', 'grass', 'stone', 'grass', 'dirty', 'water', 'water', 'grass'],
-    ['grass', 'dirty', 'stone', 'stone', 'stone', 'dirty', 'water', 'water', 'grass'],
-    ['grass', 'dirty', 'dirty', 'dirty', 'dirty', 'dirty', 'water', 'water', 'grass'],
-    ['grass', 'grass', 'grass', 'grass', 'grass', 'dirty', 'water', 'water', 'grass']
+    //['grass', 'dirty', 'dirty', 'dirty', 'dirty', 'dirty', 'water', 'water', 'grass'],
+    //['grass', 'dirty', 'grass', 'stone', 'grass', 'dirty', 'water', 'water', 'grass'],
+    //['grass', 'dirty', 'stone', 'stone', 'stone', 'dirty', 'water', 'water', 'grass'],
+    //['grass', 'dirty', 'dirty', 'dirty', 'dirty', 'dirty', 'water', 'water', 'grass'],
+    //['grass', 'grass', 'grass', 'grass', 'grass', 'dirty', 'water', 'water', 'grass']
   ];
 
   var loadBase = function() {
@@ -69,7 +69,7 @@ define(['zepto', 'underscore'], function ($, _) {
         current.removeClass().addClass(currentTile + ' tile blink');
       } else {
         var tile = placeTile(currentTile, row, col);
-        tile.addClass('blink');
+        //tile.addClass('blink');
         tile.on(tileHover);
         tile.on(tileSwap);
         current.remove();
