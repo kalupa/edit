@@ -2,7 +2,8 @@
 
 require.config({
   paths: {
-    'underscore': 'underscore-min'
+    'underscore': 'underscore-min',
+    'zepto': 'zepto'
   },
   shim: {
     zepto: {

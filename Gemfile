@@ -10,6 +10,7 @@ gem 'thin'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
+gem 'haml-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
