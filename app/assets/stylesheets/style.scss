@@ -97,14 +97,14 @@ a {
 }
 
 .stone {
-  background-image: url('/images/Stone Block.png');
+  background-image: image-url('Stone-Block.png');
 }
 .grass {
-  background-image: url('/images/Grass Block.png');
+  background-image: image-url('Grass-Block.png');
 }
 .dirty {
-  background-image: url('/images/Dirt Block.png');
+  background-image: image-url('Dirt-Block.png');
 }
 .water {
-  background-image: url('/images/Water Block.png');
+  background-image: image-url('Water-Block.png');
 }
