@@ -35,9 +35,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    daemons (1.1.9)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    foreman (0.62.0)
+      thor (>= 0.13.6)
     hike (1.2.1)
     i18n (0.6.4)
     jbuilder (1.0.2)
@@ -90,6 +94,10 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    thin (1.5.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.18.0)
     thread_safe (0.1.0)
       atomic
@@ -109,10 +117,12 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0.beta1)
+  foreman
   jbuilder (~> 1.0.1)
   jquery-rails
   pg
   rails (= 4.0.0.beta1)
   sass-rails (~> 4.0.0.beta1)
+  thin
   turbolinks
   uglifier (>= 1.0.3)
