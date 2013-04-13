@@ -1,4 +1,5 @@
 class Api::V1::TilesController < Api::V1::BaseController
+
   def index
     @tiles = Tile.all
     respond_with @tiles
